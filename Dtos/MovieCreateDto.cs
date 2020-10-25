@@ -1,17 +1,10 @@
-using System.ComponentModel.DataAnnotations;
-
-namespace movieApi.Models
+namespace movieApi.Dtos
 {
-    public class Movie 
+    public class MovieCreateDto
     {
-        [Key]
-        public int Id { get; set; }
-        [Required]
         public string Title { get; set; }
-        public string PosterPath { get; set; }
-        [Required]
         public string Genre { get; set; }
-        [Required]
+        public string PosterPath { get; set; }
         public string Synopsis { get; set; }
         public string ReleaseDate { get; set; }
         public string Classification { get; set; }
@@ -20,5 +13,4 @@ namespace movieApi.Models
         public string Budget { get; set; }
         public string GateMoney { get; set; }
     }
-
 }
