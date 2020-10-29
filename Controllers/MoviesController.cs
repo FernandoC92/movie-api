@@ -9,7 +9,6 @@ namespace movieApi.Controllers
 {
 
     [Route("api/movies")]
-    [ApiController]
     public class MoviesController : ControllerBase
     {
         private readonly IMovieRepo _repository;
@@ -34,7 +33,7 @@ namespace movieApi.Controllers
             var movie = _repository.getById(id);
             if (movie != null)
             {
-                return Ok(_mapper.Map<MovieReadDto>(movie));
+                return Ok(_mapper.Map<MovieReadDto> (movie));
             }
             return NotFound();
         }
