@@ -41,18 +41,6 @@ namespace movieApi.Controllers
             }
             return NotFound();
         }
-        
-        // [EnableCors("PolicyMovieApi")]
-        // [HttpGet("{query}")]
-        // public ActionResult<MovieReadDto> GetMoviesByName(string query)
-        // {
-        //     var movies = _repository.getByName(query);
-        //     if (movies != null)
-        //     {
-        //         return Ok(_mapper.Map<MovieReadDto>(movies));
-        //     }
-        //     return NotFound();
-        // }
 
         [EnableCors("PolicyMovieApi")]
         [HttpPost]
