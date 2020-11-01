@@ -8,6 +8,8 @@ namespace movieApi.Data
         bool SaveChanges();
         IEnumerable<Movie> getAllMovies();
         Movie getById(int id);
+        IEnumerable<Movie> getByName(string searchString);
         void CreateMovie(Movie movie);
+
     }
 }

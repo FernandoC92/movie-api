@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using movieApi.Data;
 using movieApi.Dtos;
@@ -9,6 +10,7 @@ namespace movieApi.Controllers
 {
 
     [Route("api/movies")]
+    [ApiController]
     public class MoviesController : ControllerBase
     {
         private readonly IMovieRepo _repository;
@@ -20,6 +22,7 @@ namespace movieApi.Controllers
             _mapper = mapper;
         }
 
+        [EnableCors("PolicyMovieApi")]
         [HttpGet]
         public ActionResult<IEnumerable<MovieReadListDto>> GetAllMovies()
         {
@@ -27,17 +30,31 @@ namespace movieApi.Controllers
             return Ok(_mapper.Map<IEnumerable<MovieReadListDto>>(movies));
         }
 
+        [EnableCors("PolicyMovieApi")]
         [HttpGet("{id}", Name = "GetMovieById")]
         public ActionResult<MovieReadDto> GetMovieById(int id)
         {
             var movie = _repository.getById(id);
             if (movie != null)
             {
-                return Ok(_mapper.Map<MovieReadDto> (movie));
+                return Ok(_mapper.Map<MovieReadDto>(movie));
             }
             return NotFound();
         }
+        
+        // [EnableCors("PolicyMovieApi")]
+        // [HttpGet("{query}")]
+        // public ActionResult<MovieReadDto> GetMoviesByName(string query)
+        // {
+        //     var movies = _repository.getByName(query);
+        //     if (movies != null)
+        //     {
+        //         return Ok(_mapper.Map<MovieReadDto>(movies));
+        //     }
+        //     return NotFound();
+        // }
 
+        [EnableCors("PolicyMovieApi")]
         [HttpPost]
         public ActionResult<MovieReadDto> CreateMovie(MovieCreateDto movieCreateDto)
         {

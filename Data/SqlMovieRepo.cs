@@ -33,6 +33,11 @@ namespace movieApi.Data
             return _context.Movies.FirstOrDefault(p => p.Id == id);
         }
 
+        public IEnumerable<Movie> getByName(string searchString)
+        {
+            return _context.Movies.Where(m => m.Title.Contains(searchString));
+        }
+
         public bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0);

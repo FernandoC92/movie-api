@@ -31,17 +31,22 @@ namespace movieApi
             services.AddDbContext<MovieContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("MovieConnection")));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<IMovieRepo, SqlMovieRepo>();
+            services.AddControllers();
             services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins, builder =>
+        {
+            options.AddPolicy(name: MyAllowSpecificOrigins, builder =>
+                              {
+                                  builder.WithOrigins("http://localhost:3000");
+                              });
+
+            options.AddPolicy("PolicyMovieApi",
+                builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000");
+                    builder.WithOrigins("http://localhost:3000")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
                 });
-            });
-            services.AddControllers(options =>
-                        {
-                            options.RespectBrowserAcceptHeader = true; // false by default
-                        });
+        });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +59,7 @@ namespace movieApi
 
             app.UseRouting();
 
-            app.UseCors(MyAllowSpecificOrigins);
+            app.UseCors();
 
             app.UseAuthorization();
 
