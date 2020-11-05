@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VS5HnkD4q/SjOpLmJoaWWGVnhH0txZqZixKTMugNMkftyfMH99YXZtNldkxabfe8fBOBX7em/2POWlX6A14Z/g==",
+  "dgSpecHash": "MklJnr9AH5S0pQtEWjTT1R2UK69oer8YJW20oxvRvvnEXUrY/7MO91n93hLjHtImlqPG5visPad/wqwFjnhN+w==",
   "success": true,
   "projectFilePath": "C:\\MyWorkspace\\.NETCore\\movieApi\\movieApi.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\ferna\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.6.0\\microsoft.identitymodel.tokens.5.6.0.nupkg.sha512",
     "C:\\Users\\ferna\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\ferna\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
+    "C:\\Users\\ferna\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\ferna\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\ferna\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\ferna\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
